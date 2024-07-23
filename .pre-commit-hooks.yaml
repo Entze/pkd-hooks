@@ -1,0 +1,6 @@
+- id: check-posix-portable-filename
+  name: "Check POSIX portable filename"
+  description: "Check if filename is in POSIX portable character set"
+  entry: check-posix-portable-filename
+  language: python
+  types: [text]
