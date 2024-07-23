@@ -1,0 +1,10 @@
+name: dev.pkd-hooks
+channels:
+  - conda-forge
+dependencies:
+  - pre-commit
+  - commitizen
+  - python-lsp-server
+  - pylsp-mypy
+  - python-lsp-ruff
+  - pyright
