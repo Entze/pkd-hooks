@@ -1,0 +1,42 @@
+repos:
+  - repo: local
+    hooks:
+      - id: pre-commit-validate-config
+        name: "pre-commit: validate-config"
+        entry: pre-commit validate-config
+        files: "\\.pre-commit-config.yaml"
+        language: system
+      - id: pre-commit-validate-manifest
+        name: "pre-commit: validate-manifest"
+        entry: "pre-commit validate-manifest"
+        files: "\\.pre-commit-hooks.yaml"
+        language: system
+      - id: rye-format
+        name: "rye: format"
+        entry: "rye format"
+        types: [python]
+        language: system
+      - id: rye-lint
+        name: "rye: lint"
+        entry: "rye lint"
+        types: [python]
+        language: system
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-json
+        name: "pre-commit-hooks: Check json"
+      - id: check-toml
+        name: "pre-commit-hooks: Check toml"
+      - id: check-xml
+        name: "pre-commit-hooks: Check xml"
+      - id: check-yaml
+        name: "pre-commit-hooks: Check yaml"
+      - id: detect-private-key
+        name: "pre-commit-hooks: Detect private key"
+      - id: end-of-file-fixer
+        name: "pre-commit-hooks: End of file fixer"
+        exclude: "(src|tests)"
+      - id: trailing-whitespace
+        name: "pre-commit-hooks: Trailing whitespace"
+        exclude: "(src|tests)"
